@@ -1,0 +1,156 @@
+🐍 Day 1 – Python Installation & Input/Output
+
+This document covers the **basics of Python setup** and **Input/Output operations**, forming the foundation for learning **Agentic AI and AI development**.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+📌 1. Python Installation
+
+🔹 Step 1: Download Python
+
+* Go to 👉 [https://www.python.org](https://www.python.org)
+* Download the **latest stable version**
+* Check **“Add Python to PATH”** before installing
+
+🔹 Step 2: Verify Installation
+
+Open terminal/command prompt and run:
+
+```bash
+python --version
+```
+
+or
+
+```bash
+python3 --version
+```
+
+If Python version is displayed, installation is successful ✅
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧑‍💻 2. Python IDEs / Editors
+
+You can use any of the following:
+
+* VS Code (recommended)
+* PyCharm
+* Jupyter Notebook
+* Google Colab (online)
+
+---
+
+▶️ 3. Running Your First Python Program
+
+Create a file named `hello.py`
+
+```python
+print("Hello, Agentic AI!")
+```
+
+Run using terminal:
+
+```bash
+python hello.py
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🖨️ 4. Output in Python (`print()`)
+
+The `print()` function is used to display output on the screen.
+
+Example:
+
+```python
+print("Welcome to Python")
+print(10)
+print(5 + 3)
+```
+
+Output:
+
+```
+Welcome to Python
+10
+8
+```
+
+---
+⌨️ 5. Input in Python (`input()`)
+
+The `input()` function is used to take input from the user.
+
+Example:
+
+```python
+name = input("Enter your name: ")
+print("Hello", name)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔢 6. Type Conversion (Important)
+
+By default, input is taken as **string**.
+
+### Example:
+
+```python
+age = int(input("Enter your age: "))
+print(age + 5)
+```
+
+Other conversions:
+
+```python
+float()
+str()
+```
+
+---
+
+➕ 7. Multiple Inputs
+
+```python
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print("Sum:", a + b)
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 8. Basic Formatting
+
+Using commas
+
+```python
+name = "AI"
+level = 1
+print("Learning", name, "Level", level)
+```
+
+Using f-strings (recommended)
+
+```python
+print(f"Learning AI Level {level}")
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+❌ 9. Common Beginner Mistakes
+
+* Forgetting to convert input to `int` or `float`
+* Missing quotation marks
+* Incorrect indentation
+* Using wrong variable names
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Python is easy to install and beginner-friendly
+* `print()` is used for output
+* `input()` is used for user input
+* Type conversion is **very important**
+* This forms the base for AI & Agentic AI development
