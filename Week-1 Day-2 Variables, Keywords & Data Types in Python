@@ -1,0 +1,219 @@
+🐍 Week-1 | Day-2 – Variables, Keywords & Data Types in Python
+
+This document covers **core Python fundamentals** required for building **AI, Agentic AI, and automation systems**.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. Variables in Python
+
+🔹 What is a Variable?
+
+A variable is used to **store data** in memory.
+
+🔹 Syntax
+
+```python
+variable_name = value
+```
+
+🔹 Examples
+
+```python
+name = "Agentic AI"
+age = 21
+price = 99.5
+```
+
+---
+
+🧠 Rules for Naming Variables
+
+✅ Allowed:
+
+* Letters (a-z, A-Z)
+* Numbers (0-9)
+* Underscore (_)
+
+❌ Not Allowed:
+
+* Starting with a number
+* Special symbols (@, #, $, etc.)
+* Python keywords
+
+Examples:
+
+```python
+user_name = "AI"
+age1 = 20
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔑 2. Keywords in Python
+
+🔹 What are Keywords?
+
+Keywords are **reserved words** with predefined meanings.
+
+You **cannot use them as variable names**.
+
+🔹 Examples of Python Keywords
+
+```text
+False, True, None
+and, or, not
+if, else, elif
+for, while, break, continue
+def, return
+class
+import, from
+try, except, finally
+```
+
+🔹 Check Keywords Programmatically
+
+```python
+import keyword
+print(keyword.kwlist)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📦 3. Data Types in Python
+
+Data types define the **type of data** stored in a variable.
+
+---
+
+🔹 3.1 Numeric Data Types
+
+Integer (`int`)
+
+```python
+x = 10
+```
+
+Float (`float`)
+
+```python
+y = 10.5
+```
+
+Complex (`complex`)
+
+```python
+z = 2 + 3j
+```
+
+---
+
+🔹 3.2 Text Data Type
+
+String (`str`)
+
+```python
+name = "Python"
+```
+
+---
+
+🔹 3.3 Boolean Data Type
+
+```python
+is_active = True
+is_admin = False
+```
+
+---
+
+🔹 3.4 Sequence Data Types
+
+List (`list`) – Ordered & Mutable
+
+```python
+skills = ["Python", "AI", "ML"]
+```
+
+Tuple (`tuple`) – Ordered & Immutable
+
+```python
+points = (10, 20, 30)
+```
+
+Range (`range`)
+
+```python
+numbers = range(1, 6)
+```
+
+---
+
+🔹 3.5 Set Data Type
+
+Set (`set`) – Unordered & Unique
+
+```python
+unique_ids = {1, 2, 3}
+```
+
+---
+
+🔹 3.6 Mapping Data Type
+
+Dictionary (`dict`) – Key-Value Pair
+
+```python
+student = {
+    "name": "Saakshi",
+    "course": "Agentic AI",
+    "week": 1
+}
+```
+
+---
+
+🔹 3.7 None Data Type
+
+```python
+result = None
+```
+
+Used when a variable has **no value yet**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔍 4. Checking Data Type
+
+```python
+x = 10
+print(type(x))
+```
+
+---
+
+🔄 5. Type Conversion (Type Casting)
+
+```python
+a = "10"
+b = int(a)
+c = float(b)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+❌ 6. Common Beginner Mistakes
+
+* Using keywords as variable names
+* Forgetting quotes for strings
+* Mixing data types without conversion
+* Assuming input() gives numbers (it gives string)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Variables store data
+* Keywords are reserved words
+* Python supports multiple built-in data types
+* `type()` helps identify data types
+* Type conversion is essential in Python
