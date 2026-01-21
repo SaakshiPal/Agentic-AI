@@ -1,0 +1,208 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🐍 Week-1 | Day-3 – Operators & Conditional Statements in Python
+
+This document explains **Python operators** and **conditional statements**, which are essential for **decision-making in programs**, AI logic, and Agentic AI workflows.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. Operators in Python
+
+Operators are used to **perform operations** on variables and values.
+
+---
+
+➕ 1.1 Arithmetic Operators
+
+Used for mathematical calculations.
+
+| Operator | Meaning        | Example  |
+| -------- | -------------- | -------- |
+| `+`      | Addition       | `a + b`  |
+| `-`      | Subtraction    | `a - b`  |
+| `*`      | Multiplication | `a * b`  |
+| `/`      | Division       | `a / b`  |
+| `%`      | Modulus        | `a % b`  |
+| `**`     | Power          | `a ** b` |
+| `//`     | Floor Division | `a // b` |
+
+Example:
+
+```python
+a = 10
+b = 3
+print(a + b)
+print(a % b)
+print(a ** b)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 1.2 Assignment Operators
+
+Used to assign values to variables.
+
+| Operator | Example  |
+| -------- | -------- |
+| `=`      | `a = 10` |
+| `+=`     | `a += 5` |
+| `-=`     | `a -= 2` |
+| `*=`     | `a *= 3` |
+| `/=`     | `a /= 2` |
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔍 1.3 Comparison Operators
+
+Used to compare values and return **True / False**.
+
+| Operator | Meaning               |
+| -------- | --------------------- |
+| `==`     | Equal                 |
+| `!=`     | Not equal             |
+| `>`      | Greater than          |
+| `<`      | Less than             |
+| `>=`     | Greater than or equal |
+| `<=`     | Less than or equal    |
+
+Example:
+
+```python
+a = 10
+b = 5
+print(a > b)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔗 1.4 Logical Operators
+
+Used to combine conditions.
+
+| Operator | Meaning        |
+| -------- | -------------- |
+| `and`    | Both true      |
+| `or`     | Any one true   |
+| `not`    | Reverse result |
+
+Example:
+
+```python
+age = 20
+print(age > 18 and age < 25)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧾 1.5 Membership Operators
+
+Used to check if a value exists in a sequence.
+
+| Operator | Meaning     |
+| -------- | ----------- |
+| `in`     | Present     |
+| `not in` | Not present |
+
+```python
+skills = ["Python", "AI"]
+print("Python" in skills)
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🆔 1.6 Identity Operators
+
+Used to compare **memory location**.
+
+| Operator | Meaning          |
+| -------- | ---------------- |
+| `is`     | Same object      |
+| `is not` | Different object |
+
+```python
+a = 10
+b = 10
+print(a is b)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Conditional Statements
+
+Conditional statements help the program **make decisions**.
+
+---
+
+🔹 2.1 `if` Statement
+
+```python
+age = 20
+if age >= 18:
+    print("Eligible to vote")
+```
+
+---
+
+🔹 2.2 `if-else` Statement
+
+```python
+age = 16
+if age >= 18:
+    print("Eligible")
+else:
+    print("Not eligible")
+```
+
+---
+
+🔹 2.3 `if-elif-else` Statement
+
+```python
+marks = 85
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 75:
+    print("Grade B")
+else:
+    print("Grade C")
+```
+
+---
+
+🔹 2.4 Nested `if`
+
+```python
+num = 10
+
+if num > 0:
+    if num % 2 == 0:
+        print("Positive Even")
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Important Notes
+
+* Indentation is **mandatory** in Python
+* Conditions must return **True or False**
+* Avoid using `=` instead of `==`
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+❌ Common Beginner Mistakes
+
+* Missing colon (`:`)
+* Wrong indentation
+* Using assignment instead of comparison
+* Forgetting logical operators
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Operators perform actions on data
+* Conditional statements control program flow
+* `if-elif-else` is heavily used in AI logic
+* Strong basics help in Agentic AI decision-making
+
