@@ -1,0 +1,203 @@
+🐍 Week-1 | Day-4 – Loops & Functions in Python
+
+This document explains **loops** and **functions**, which are essential for **automation, AI workflows, and Agentic AI logic**.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 1. Loops in Python
+
+Loops are used to **repeat a block of code** multiple times.
+
+---
+
+🔹 1.1 `for` Loop
+
+Used to iterate over a **sequence** (list, tuple, string, range).
+
+Syntax:
+
+```python
+for variable in sequence:
+    statements
+```
+
+Example:
+
+```python
+for i in range(1, 6):
+    print(i)
+```
+
+---
+
+🔹 1.2 `while` Loop
+
+Runs as long as the **condition is True**.
+
+Syntax:
+
+```python
+while condition:
+    statements
+```
+
+Example:
+
+```python
+count = 1
+while count <= 5:
+    print(count)
+    count += 1
+```
+
+---
+
+🔸 1.3 `break` Statement
+
+Stops the loop immediately.
+
+```python
+for i in range(1, 10):
+    if i == 5:
+        break
+    print(i)
+```
+
+---
+
+🔸 1.4 `continue` Statement
+
+Skips the current iteration.
+
+```python
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+```
+
+---
+
+🔸 1.5 `pass` Statement
+
+Used as a placeholder.
+
+```python
+for i in range(5):
+    pass
+```
+
+---
+
+⚠️ Loop Best Practices
+
+* Avoid infinite loops
+* Update loop variables correctly
+* Use `break` carefully
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 2. Functions in Python
+
+Functions are used to **reuse code** and make programs **clean & modular**.
+
+---
+
+🔹 2.1 Defining a Function
+
+### Syntax:
+
+```python
+def function_name():
+    statements
+```
+
+Example:
+
+```python
+def greet():
+    print("Hello, Agentic AI")
+```
+
+---
+
+🔹 2.2 Calling a Function
+
+```python
+greet()
+```
+
+---
+
+🔹 2.3 Function with Parameters
+
+```python
+def add(a, b):
+    print(a + b)
+```
+
+---
+
+🔹 2.4 Function with Return Value
+
+```python
+def multiply(a, b):
+    return a * b
+
+result = multiply(3, 4)
+print(result)
+```
+
+---
+
+🔹 2.5 Default Parameters
+
+```python
+def greet(name="User"):
+    print("Hello", name)
+```
+
+---
+
+🔹 2.6 Keyword Arguments
+
+```python
+greet(name="Saakshi")
+```
+
+---
+
+🔹 2.7 `*args` and `**kwargs`
+
+`*args` – Multiple positional arguments
+
+```python
+def total(*numbers):
+    return sum(numbers)
+```
+
+`**kwargs` – Multiple keyword arguments
+
+```python
+def info(**details):
+    print(details)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+❌ Common Beginner Mistakes
+
+* Forgetting `return`
+* Wrong indentation
+* Calling function before defining
+* Infinite loops in `while`
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Loops automate repetitive tasks
+* Functions improve code reuse
+* `for` is best for known ranges
+* `while` is best for conditions
+* Functions are core to AI pipelines
