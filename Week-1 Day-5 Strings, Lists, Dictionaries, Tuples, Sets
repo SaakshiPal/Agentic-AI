@@ -1,0 +1,220 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🐍 Week-1 | Day-5 – Strings, Lists, Dictionaries, Tuples & Sets
+
+This document covers **Python collection and string data types**, which are heavily used in **AI, data handling, and Agentic AI systems**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔤 1. Strings (`str`)
+
+Strings are used to store **text data**.
+
+🔹 Creating a String
+
+```python
+name = "Agentic AI"
+```
+
+---
+
+🔹 String Operations
+
+```python
+text = "Python"
+print(text.upper())
+print(text.lower())
+print(len(text))
+```
+
+---
+
+🔹 String Indexing & Slicing
+
+```python
+text = "Python"
+print(text[0])      # P
+print(text[1:4])    # yth
+```
+
+---
+
+🔹 String Methods (Common)
+
+* `upper()`
+* `lower()`
+* `strip()`
+* `replace()`
+* `split()`
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📋 2. Lists (`list`)
+
+Lists store **multiple items** and are **mutable (changeable)**.
+
+🔹 Creating a List
+
+```python
+skills = ["Python", "AI", "ML"]
+```
+
+---
+
+🔹 Access & Modify Elements
+
+```python
+skills[0] = "Agentic AI"
+```
+
+---
+
+🔹 List Methods
+
+```python
+skills.append("GenAI")
+skills.remove("AI")
+skills.sort()
+```
+
+---
+
+🔹 Looping Through List
+
+```python
+for skill in skills:
+    print(skill)
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📘 3. Tuples (`tuple`)
+
+Tuples are **ordered** but **immutable (cannot be changed)**.
+
+🔹 Creating a Tuple
+
+```python
+points = (10, 20, 30)
+```
+
+---
+
+🔹 Access Elements
+
+```python
+print(points[1])
+```
+
+---
+
+🔹 Why Use Tuples?
+
+* Faster than lists
+* Used for fixed data
+* Safe from modification
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📦 4. Sets (`set`)
+
+Sets store **unique and unordered values**.
+
+🔹 Creating a Set
+
+```python
+ids = {1, 2, 3, 3}
+print(ids)
+```
+
+---
+
+🔹 Set Operations
+
+```python
+ids.add(4)
+ids.remove(2)
+```
+
+---
+
+🔹 Set Use Case
+
+* Remove duplicates
+* Membership testing
+* Mathematical operations
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🗂️ 5. Dictionaries (`dict`)
+
+Dictionaries store data in **key–value pairs**.
+
+🔹 Creating a Dictionary
+
+```python
+student = {
+    "name": "Saakshi",
+    "course": "Agentic AI",
+    "week": 1
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Access & Update Values
+
+```python
+print(student["name"])
+student["week"] = 2
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Dictionary Methods
+
+```python
+student.keys()
+student.values()
+student.items()
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Looping Through Dictionary
+
+```python
+for key, value in student.items():
+    print(key, value)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 6. Comparison Summary
+
+| Data Type  | Ordered | Mutable | Unique      |
+| ---------- | ------- | ------- | ----------- |
+| String     | ✅      | ❌     | ❌          |
+| List       | ✅      | ✅     | ❌          |
+| Tuple      | ✅      | ❌     | ❌          |
+| Set        | ❌      | ✅     | ✅          |
+| Dictionary | ✅      | ✅     | Keys unique |
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+❌ Common Beginner Mistakes
+
+* Trying to modify tuples
+* Using wrong brackets
+* Accessing wrong index/key
+* Forgetting keys must be unique in dict
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Strings handle text data
+* Lists store dynamic collections
+* Tuples store fixed data
+* Sets handle unique values
+* Dictionaries store structured data
