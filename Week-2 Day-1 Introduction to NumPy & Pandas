@@ -1,0 +1,175 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧮📊 Week-2 | Day-1 – Introduction to NumPy & Pandas
+
+This document introduces **NumPy** and **Pandas**, the two most important Python libraries used in **Data Science, Machine Learning, and Agentic AI systems**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. Why NumPy & Pandas?
+
+In real-world AI systems:
+
+* Data is **large**
+* Data needs **fast processing**
+* Data needs **clean structure**
+
+👉 NumPy and Pandas solve these problems.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔢 2. Introduction to NumPy
+
+🔹 What is NumPy?
+
+NumPy (Numerical Python) is a library used for **fast numerical computations**.
+
+---
+
+🔹 Why Use NumPy?
+
+* Faster than Python lists
+* Less memory usage
+* Supports multi-dimensional arrays
+* Required for ML libraries (TensorFlow, PyTorch, Scikit-learn)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Installing & Importing NumPy
+
+```bash
+pip install numpy
+```
+
+```python
+import numpy as np
+```
+
+---
+
+🔹 Basic NumPy Example
+
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3, 4])
+print(arr)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 NumPy vs Python List
+
+| Feature  | List    | NumPy Array |
+| -------- | ------- | ----------- |
+| Speed    | Slow    | Fast        |
+| Memory   | High    | Low         |
+| Math Ops | Limited | Vectorized  |
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 3. Introduction to Pandas
+
+🔹 What is Pandas?
+
+Pandas is a library used for **data manipulation and analysis**.
+
+It works mainly with:
+
+* **Series** (1D data)
+* **DataFrame** (2D data – table form)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Why Use Pandas?
+
+* Handles structured data easily
+* Easy data cleaning
+* Powerful data analysis tools
+* Used in almost every data project
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Installing & Importing Pandas
+
+```bash
+pip install pandas
+```
+
+```python
+import pandas as pd
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📄 4. Pandas Data Structures
+
+---
+
+🔹 4.1 Series
+
+A Series is a **one-dimensional labeled array**.
+
+```python
+import pandas as pd
+
+s = pd.Series([10, 20, 30])
+print(s)
+```
+
+---
+
+🔹 4.2 DataFrame
+
+A DataFrame is a **2D table** with rows and columns.
+
+```python
+data = {
+    "Name": ["A", "B", "C"],
+    "Score": [85, 90, 95]
+}
+
+df = pd.DataFrame(data)
+print(df)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔍 5. Basic Data Exploration
+
+```python
+df.head()
+df.tail()
+df.shape
+df.info()
+df.describe()
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 6. NumPy & Pandas Together
+
+Pandas internally uses **NumPy arrays**.
+
+```python
+df.values
+type(df.values)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Forgetting to import libraries
+* Confusing list with array
+* Not using DataFrame for tabular data
+* Ignoring `.info()` and `.describe()`
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* NumPy is for **numerical computation**
+* Pandas is for **data analysis & manipulation**
+* Both are essential for AI & Agentic AI pipelines
+* Pandas is built on top of NumPy
