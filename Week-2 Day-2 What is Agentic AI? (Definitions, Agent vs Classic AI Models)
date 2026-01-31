@@ -1,0 +1,150 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖 Week-2 | Day-2 – What is Agentic AI?
+
+This document explains **Agentic AI**, its definition, and how it is **different from traditional (classic) AI models**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is Agentic AI?
+
+**Agentic AI** refers to AI systems that can:
+
+* Think (reason)
+* Plan actions
+* Take decisions
+* Use tools
+* Remember past interactions
+* Act autonomously to achieve goals
+
+👉 These AI systems are called **AI Agents**.
+
+---
+
+🧠 Simple Definition
+
+> **Agentic AI = AI that can decide and act on its own to achieve a goal.**
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. What is an AI Agent?
+
+An **AI Agent** is an entity that:
+
+* Receives input from environment
+* Processes information
+* Takes actions
+* Learns from results
+
+Example:
+
+* Chatbot that only answers → ❌ Not agentic
+* AI that answers + searches web + stores memory + takes next action → ✅ Agentic
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 3. Core Components of an AI Agent
+
+An Agentic AI system usually has:
+
+1. **Goal** – What the agent wants to achieve
+2. **Memory** – Stores past information
+3. **Reasoning** – Decides what to do next
+4. **Tools** – APIs, databases, web search, files
+5. **Actions** – Executes tasks
+6. **Feedback loop** – Improves decisions
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. What is Classic (Traditional) AI?
+
+Classic AI models:
+
+* Work on **input → output**
+* Do not take independent actions
+* Do not remember past context (by default)
+* Do not plan steps
+
+Example:
+
+```text
+User → Prompt → AI → Response → End
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚔️ 5. Agentic AI vs Classic AI Models
+
+| Feature          | Classic AI | Agentic AI |
+| ---------------- | ---------- | ---------- |
+| Decision Making  | No         | Yes        |
+| Memory           | No         | Yes        |
+| Tool Usage       | No         | Yes        |
+| Planning         | No         | Yes        |
+| Multi-step Tasks | No         | Yes        |
+| Autonomy         | Low        | High       |
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. Real-World Examples
+
+❌ Classic AI
+
+* Simple chatbot
+* Text summarizer
+* Sentiment analysis model
+
+✅ Agentic AI
+
+* AI that books tickets
+* AI that analyzes data + generates report
+* Multi-agent systems solving tasks together
+* Autonomous research assistants
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 7. How Agentic AI Works (Flow)
+
+```text
+Goal → Reason → Decide → Act → Observe → Remember → Repeat
+```
+
+This loop continues until the goal is achieved.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 8. Why Agentic AI is Important?
+
+* Handles **complex real-world problems**
+* Automates decision-making
+* Reduces human intervention
+* Used in **AI assistants, automation tools, autonomous systems**
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 9. Agentic AI in This Course
+
+In upcoming days, you will learn:
+
+* Agent architectures
+* Memory using vector databases
+* Tool-using agents
+* Multi-agent systems
+* RAG-based agents
+* Automation with workflows
+
+---
+
+❌ Common Misunderstanding
+
+❌ Agentic AI is just a chatbot
+✅ Agentic AI is a **decision-making system**
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Agentic AI goes beyond simple responses
+* AI Agents can reason, plan, and act
+* Classic AI is static; Agentic AI is dynamic
+* Agentic AI is the future of intelligent systems
