@@ -1,0 +1,186 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖 Week-2 | Day-3 – Types of Agents in Agentic AI
+
+This document explains the **different types of AI agents**, how they work, and where they are used in **real-world Agentic AI systems**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What Are AI Agents?
+
+An **AI Agent** is an entity that:
+
+* Observes its environment
+* Makes decisions
+* Takes actions to achieve goals
+
+Different agents are designed based on **complexity, memory, and intelligence**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 2. Types of AI Agents
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2.1 Simple Reflex Agent
+
+✅ How It Works
+
+* Acts only on **current input**
+* Uses **if-else rules**
+* No memory
+
+Example:
+
+```text
+If temperature > 30 → Turn on AC
+```
+
+❌ Limitations
+
+* No learning
+* No past awareness
+
+🏷️ Use Case
+
+* Simple automation systems
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2.2 Model-Based Agent
+
+✅ How It Works
+
+* Maintains **internal state**
+* Uses a **model of the environment**
+* Can handle partial information
+
+Example:
+
+```text
+Remembers last room temperature before acting
+```
+
+🏷️ Use Case
+
+* Navigation systems
+* Game AI
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2.3 Goal-Based Agent
+
+✅ How It Works
+
+* Has a **goal**
+* Plans actions to reach the goal
+* Evaluates multiple possibilities
+
+Example:
+
+```text
+Goal → Reach destination using best route
+```
+
+🏷️ Use Case
+
+* Path planning
+* Task automation
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2.4 Utility-Based Agent
+
+✅ How It Works
+
+* Uses a **utility function**
+* Chooses the action with **maximum benefit**
+* Considers performance, cost, risk
+
+Example:
+
+```text
+Choose fastest and cheapest option
+```
+
+🏷️ Use Case
+
+* Recommendation systems
+* Financial decision systems
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2.5 Learning Agent
+
+✅ How It Works
+
+* Learns from **experience**
+* Improves performance over time
+* Adapts to environment
+
+Components:
+
+* Learning element
+* Performance element
+* Critic
+* Problem generator
+
+🏷️ Use Case
+
+* ML models
+* Reinforcement learning systems
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2.6 Multi-Agent Systems
+
+✅ How It Works
+
+* Multiple agents work together
+* Agents can **communicate**
+* Tasks are divided among agents
+
+Example:
+
+```text
+One agent researches
+Another writes code
+Another tests output
+```
+
+🏷️ Use Case
+
+* CrewAI
+* Swarm systems
+* Distributed AI
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 3. Agent Types Summary Table
+
+| Agent Type     | Memory | Goal | Learning |
+| -------------- | ------ | ---- | -------- |
+| Simple Reflex  | ❌     | ❌  | ❌       |
+| Model-Based    | ✅     | ❌  | ❌       |
+| Goal-Based     | ✅     | ✅  | ❌       |
+| Utility-Based  | ✅     | ✅  | ❌       |
+| Learning Agent | ✅     | ✅  | ✅       |
+| Multi-Agent    | ✅     | ✅  | ✅       |
+
+---
+
+⚠️ Common Confusions
+
+* ❌ All agents are learning agents
+* ❌ Chatbots are always agentic
+
+✔ Agentic behavior depends on **decision + action + autonomy**
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Agents differ based on **memory, goals, and learning**
+* Agentic AI systems usually combine multiple agent types
+* Modern frameworks support **multi-agent workflows**
+* Understanding agent types is crucial for designing Agentic AI
