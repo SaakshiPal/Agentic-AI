@@ -1,0 +1,151 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖 Week-2 | Day-4 – Agentic AI vs Traditional AI
+
+This document explains the **key differences between Agentic AI and Traditional (Classic) AI**, with examples and real-world relevance.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is Traditional AI?
+
+**Traditional AI** systems:
+
+* Work on a **single input → single output**
+* Do not make decisions on their own
+* Do not plan steps
+* Do not take actions beyond response generation
+
+Example:
+
+```text
+User Prompt → AI Response → End
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. What is Agentic AI?
+
+**Agentic AI** systems:
+
+* Have a **goal**
+* Decide **what to do next**
+* Can take **multiple actions**
+* Use **tools**
+* Store **memory**
+* Work autonomously
+
+Example:
+
+```text
+Goal → Reason → Act → Observe → Remember → Repeat
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚔️ 3. Agentic AI vs Traditional AI (Comparison Table)
+
+| Feature          | Traditional AI | Agentic AI |
+| ---------------- | -------------- | ---------- |
+| Decision Making  | ❌ No          | ✅ Yes   |
+| Planning         | ❌ No          | ✅ Yes   |
+| Memory           | ❌ No          | ✅ Yes   |
+| Tool Usage       | ❌ No          | ✅ Yes   |
+| Autonomy         | Low             |  High    |
+| Multi-step Tasks | ❌ No          | ✅ Yes   |
+| Adaptability     | Low             |  High    |
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 4. Key Differences Explained
+
+🔹 Decision Making
+
+* Traditional AI only responds
+* Agentic AI **chooses actions**
+
+---
+
+🔹 Memory
+
+* Traditional AI forgets after response
+* Agentic AI remembers context
+
+---
+
+🔹 Tool Usage
+
+* Traditional AI does not call APIs
+* Agentic AI can use tools, databases, files
+
+---
+
+🔹 Planning
+
+* Traditional AI answers directly
+* Agentic AI breaks tasks into steps
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. Real-World Examples
+
+❌ Traditional AI
+
+* Text summarization
+* Question answering
+* Image classification
+
+✅ Agentic AI
+
+* AI booking tickets
+* AI generating reports automatically
+* Autonomous research agents
+* Multi-agent collaboration systems
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 6. Task Execution Example
+
+Traditional AI:
+
+```text
+User: "Analyze sales data"
+AI: "Here is the summary"
+```
+
+Agentic AI:
+
+```text
+Goal: Analyze sales data
+→ Load data
+→ Clean data
+→ Analyze trends
+→ Generate report
+→ Save output
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Misconceptions
+
+* ❌ All LLMs are agentic
+* ❌ Chatbots are agentic by default
+
+✔ Agentic AI requires **autonomy + action**
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 7. Why Agentic AI is the Future?
+
+* Automates complex workflows
+* Reduces human involvement
+* Handles real-world tasks end-to-end
+* Used in AI assistants, DevOps, data analysis
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Traditional AI is **reactive**
+* Agentic AI is **proactive**
+* Agentic AI systems can plan and act
+* Modern AI applications are shifting to Agentic AI
