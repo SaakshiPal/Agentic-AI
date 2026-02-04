@@ -1,0 +1,206 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖 Week-2 | Day-6 – Using Hugging Face, Ollama & LM Studio Locally
+
+This document explains how to **run Large Language Models (LLMs) locally** using **Hugging Face**, **Ollama**, and **LM Studio**, which is important for **Agentic AI, privacy, and offline AI systems**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. Why Run LLMs Locally?
+
+Running models locally helps to:
+
+* Protect data privacy
+* Avoid API costs
+* Work offline
+* Build faster Agentic AI prototypes
+* Customize and fine-tune models
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤗 2. Hugging Face (Local Usage)
+
+🔹 What is Hugging Face?
+
+Hugging Face is a platform that provides:
+
+* Pre-trained models
+* Datasets
+* Transformers library
+
+Used widely for **NLP, LLMs, and AI research**.
+
+---
+
+🔹 Installing Required Libraries
+
+```bash
+pip install transformers torch accelerate
+```
+
+---
+
+🔹 Running a Model Locally (Basic Example)
+
+```python
+from transformers import pipeline
+
+generator = pipeline("text-generation", model="gpt2")
+output = generator("Agentic AI is", max_length=50)
+
+print(output)
+```
+
+---
+
+🔹 Use Cases
+
+* Custom NLP pipelines
+* Research experiments
+* Local inference
+
+---
+
+⚠️ Limitations
+
+* High RAM / GPU requirement
+* Setup complexity
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🦙 3. Ollama (Local LLM Runner)
+
+🔹 What is Ollama?
+
+Ollama allows you to **run LLMs locally with one command**.
+
+Supports models like:
+
+* LLaMA
+* Mistral
+* Gemma
+* Phi
+
+---
+
+🔹 Install Ollama
+
+👉 [https://ollama.com](https://ollama.com)
+
+---
+
+🔹 Pull and Run a Model
+
+```bash
+ollama pull mistral
+ollama run mistral
+```
+
+---
+
+🔹 Using Ollama with Python
+
+```python
+import requests
+
+response = requests.post(
+    "http://localhost:11434/api/generate",
+    json={"model": "mistral", "prompt": "Explain Agentic AI"}
+)
+
+print(response.json()["response"])
+```
+
+---
+
+🔹 Why Ollama is Popular?
+
+* Very easy setup
+* Fast local inference
+* Perfect for Agentic AI agents
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧪 4. LM Studio
+
+🔹 What is LM Studio?
+
+LM Studio is a **GUI-based tool** to:
+
+* Download models
+* Run models locally
+* Chat with LLMs
+* Expose local API
+
+---
+
+🔹 Key Features
+
+* No coding required
+* Supports GGUF models
+* GPU/CPU selection
+* Local REST API
+
+---
+
+🔹 Typical Workflow
+
+```text
+Download Model → Load Model → Chat or Use API
+```
+
+---
+
+🔹 Use Cases
+
+* Beginners testing LLMs
+* Rapid prototyping
+* Local API for agents
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 5. Comparison: Hugging Face vs Ollama vs LM Studio
+
+| Feature     | Hugging Face | Ollama     | LM Studio |
+| ----------- | ------------ | ---------- | --------- |
+| Ease of Use | Medium       | Easy       | Very Easy |
+| GUI         | ❌           | ❌        | ✅        |
+| API Support | ✅           | ✅        | ✅        |
+| Offline     | ✅           | ✅        | ✅        |
+| Best For    | Research     | Agentic AI | Beginners |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖 6. Using Local LLMs in Agentic AI
+
+Local LLMs can act as:
+
+* Reasoning engine
+* Planner agent
+* Tool decision-maker
+
+Example:
+
+```text
+Agent → Local LLM → Tool → Action → Memory
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Running large models on low RAM
+* Forgetting to start local server
+* Not checking model compatibility
+* Ignoring token/context limits
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Local LLMs are cost-effective and private
+* Hugging Face is best for research
+* Ollama is best for Agentic AI workflows
+* LM Studio is best for beginners
+* Local models integrate well with agent frameworks
+
