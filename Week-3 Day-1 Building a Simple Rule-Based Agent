@@ -1,0 +1,146 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖 Week-3 | Day-1 – Building a Simple Rule-Based Agent
+
+This document explains how to **build a simple rule-based AI agent**, which is the **starting point of Agentic AI**.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is a Rule-Based Agent?
+
+A **rule-based agent**:
+
+* Works on **predefined rules**
+* Uses **if–else conditions**
+* Does NOT learn
+* Does NOT plan dynamically
+
+👉 It is the **simplest form of an AI agent**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Simple Definition
+
+> **Rule-Based Agent = If condition → then action**
+
+---
+
+📌 2. Why Start with Rule-Based Agents?
+
+* Easy to understand
+* Introduces **agent thinking**
+* Foundation for advanced agents
+* Helps understand **decision → action flow**
+
+---
+
+🔁 3. Basic Agent Workflow
+
+```text
+Input → Check Rules → Take Action → End
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. Example Use Case
+
+Scenario:
+
+An agent that decides what to do based on **user input**.
+
+Rules:
+
+* If input is "hello" → greet
+* If input is "help" → explain options
+* Else → default response
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 5. Simple Rule-Based Agent Code
+
+```python
+def rule_based_agent(user_input):
+    if user_input.lower() == "hello":
+        return "Hello! How can I help you?"
+    
+    elif user_input.lower() == "help":
+        return "You can ask about AI, Python, or Agents."
+    
+    elif user_input.lower() == "bye":
+        return "Goodbye! Have a nice day."
+    
+    else:
+        return "Sorry, I don't understand."
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+▶️ Running the Agent
+
+```python
+while True:
+    user_input = input("You: ")
+    
+    if user_input.lower() == "exit":
+        print("Agent: Session ended.")
+        break
+    
+    response = rule_based_agent(user_input)
+    print("Agent:", response)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. Key Agent Components (Mapped)
+
+| Component | Present? | How           |
+| --------- | -------- | ------------- |
+| Input     | ✅        | User input    |
+| Rules     | ✅        | if–else logic |
+| Decision  | ✅        | Rule matching |
+| Action    | ✅        | Response      |
+| Memory    | ❌        | Not present   |
+| Learning  | ❌        | Not present   |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Limitations of Rule-Based Agents
+
+* Cannot learn from experience
+* Hard to scale rules
+* No memory
+* No reasoning
+* No autonomy
+
+👉 This is **not true Agentic AI**, but the **base layer**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. How This Evolves into Agentic AI
+
+| Stage        | Capability  |
+| ------------ | ----------- |
+| Rule-Based   | Fixed rules |
+| Goal-Based   | Goal-driven |
+| Tool-Based   | Uses APIs   |
+| Memory-Based | Remembers   |
+| Agentic AI   | Autonomous  |
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+❌ Common Beginner Mistakes
+
+* Writing too many hardcoded rules
+* No default case
+* No exit condition
+* Treating rule-based agent as intelligent AI
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Rule-based agents are the **starting point**
+* They follow **fixed decision logic**
+* Useful for understanding agent flow
+* Foundation for building advanced Agentic AI agents
+
