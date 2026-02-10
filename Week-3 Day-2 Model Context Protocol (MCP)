@@ -1,0 +1,179 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠🔗 Week-3 | Day-2 – Model Context Protocol (MCP)
+
+This document explains **Model Context Protocol (MCP)**, a standardized way for **AI models to connect with tools, memory, and external systems** in Agentic AI.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is Model Context Protocol (MCP)?
+
+**MCP (Model Context Protocol)** is a **standard protocol** that allows:
+
+* AI models (LLMs)
+* Tools
+* Data sources
+* Memory systems
+
+to **communicate in a structured way**.
+
+👉 MCP acts like a **bridge between AI models and the real world**.
+
+---
+
+🧠 Simple Definition
+
+> **MCP = A common language that lets AI models safely and consistently use tools, memory, and external resources**
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Why MCP is Needed?
+
+Without MCP:
+
+* Each tool needs custom integration
+* Tight coupling between model and tools
+* Hard to scale agent systems
+
+With MCP:
+
+* Plug-and-play tools
+* Clean architecture
+* Scalable Agentic AI systems
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 3. What Problems Does MCP Solve?
+
+* Tool integration complexity
+* Context sharing across systems
+* Secure data access
+* Standardized communication
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 4. MCP High-Level Architecture
+
+```text
+LLM (Model)
+   ↓
+MCP Client
+   ↓
+MCP Server
+   ↓
+Tools / APIs / Databases / Files
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. Core Components of MCP
+
+
+🔹 5.1 MCP Client
+
+* Runs alongside the AI model
+* Sends structured requests
+* Receives tool results
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5.2 MCP Server
+
+* Exposes tools and data
+* Handles permissions
+* Executes actions safely
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5.3 Tools
+
+* Functions
+* APIs
+* Databases
+* File systems
+* Web services
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5.4 Context
+
+* Inputs
+* Outputs
+* Memory
+* Tool results
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. How MCP Works (Step-by-Step)
+
+1. Model decides it needs a tool
+2. MCP Client sends request
+3. MCP Server validates request
+4. Tool is executed
+5. Result is returned to model
+6. Model continues reasoning
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 MCP Flow Example
+
+```text
+User asks question
+→ Model reasons
+→ Needs database info
+→ Calls MCP tool
+→ Gets result
+→ Responds accurately
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. MCP vs Traditional Tool Calling
+
+| Feature         | Traditional Tool Calling | MCP      |
+| --------------- | ------------------------ | -------- |
+| Standardization | ❌ No                   | ✅ Yes   |
+| Scalability     | Low                      | High     |
+| Security        | Manual                   | Built-in |
+| Reusability     | Low                      | High     |
+| Agent Friendly  | ❌                      | ✅       |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. MCP in Agentic AI Systems
+
+MCP enables:
+
+* Tool-using agents
+* Memory-aware agents
+* Multi-agent collaboration
+* Secure enterprise AI
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 9. Example MCP Use Cases
+
+* AI agents accessing databases
+* Agents using file systems
+* Web-search agents
+* DevOps automation agents
+* Enterprise AI assistants
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Confusions
+
+* ❌ MCP is a model
+* ❌ MCP replaces LLMs
+
+✔ MCP is a **protocol**, not a model
+✔ It **connects** models to tools
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* MCP standardizes how AI uses tools
+* Makes Agentic AI scalable and secure
+* Separates reasoning from execution
+* Essential for production-ready agents
