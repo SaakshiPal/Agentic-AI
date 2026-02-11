@@ -1,0 +1,182 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠🔗 Week-3 | Day-3 – MCP for Agent Memory & Context Sharing
+
+This document explains how **Model Context Protocol (MCP)** helps in managing **agent memory** and enabling **context sharing** between tools, agents, and systems.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. Why Memory is Important in Agentic AI?
+
+In Agentic AI:
+
+* Agents perform **multi-step tasks**
+* Agents interact multiple times
+* Agents use external tools
+
+👉 Without memory, the agent:
+
+* Forgets past steps
+* Repeats work
+* Gives inconsistent results
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Types of Agent Memory
+
+---
+
+🔹 2.1 Short-Term Memory
+
+* Current conversation context
+* Temporary working memory
+* Stored inside prompt
+
+Example:
+
+```text
+User: Analyze sales data
+Agent: Loads data → Analyzes → Responds
+```
+
+---
+
+🔹 2.2 Long-Term Memory
+
+* Stored externally
+* Usually in vector databases
+* Persistent across sessions
+
+Example:
+
+* Previous reports
+* User preferences
+* Past interactions
+
+---
+
+🔹 2.3 Working Memory
+
+* Intermediate results
+* Temporary calculations
+* Tool outputs
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 3. What is MCP’s Role in Memory?
+
+**Model Context Protocol (MCP)** provides:
+
+* Structured way to pass context
+* Secure memory access
+* Standard tool interaction
+* Shared memory between agents
+
+👉 MCP acts as a **context bridge**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 4. Memory Flow with MCP
+
+```text
+User Request
+   ↓
+LLM (Reasoning)
+   ↓
+MCP Client
+   ↓
+Memory Tool (Vector DB / Storage)
+   ↓
+Relevant Context Retrieved
+   ↓
+LLM Updates Response
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. Context Sharing in Multi-Agent Systems
+
+In multi-agent systems:
+
+* Agent A performs research
+* Agent B writes report
+* Agent C verifies output
+
+👉 MCP ensures:
+
+* All agents access shared memory
+* Consistent context
+* No duplication
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 6. Example Scenario
+
+ Goal:
+
+Generate monthly performance report.
+
+Flow:
+
+1. Planner agent sets tasks
+2. Research agent retrieves past data
+3. Data agent analyzes numbers
+4. Writer agent drafts report
+5. Reviewer agent checks quality
+
+All agents access **shared memory via MCP**.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. MCP Memory Architecture
+
+```text
+Agent
+  ↓
+MCP Client
+  ↓
+Memory Service (Vector DB / Database / File System)
+  ↓
+Stored Context
+```
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. Benefits of MCP for Memory
+
+* Standardized memory access
+* Secure permissions
+* Scalable architecture
+* Multi-agent compatibility
+* Reduced hallucination
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 9. MCP vs Direct Memory Access
+
+| Feature             | Direct Access | MCP-Based Memory |
+| ------------------- | ------------- | ---------------- |
+| Structure           | Manual        | Standardized     |
+| Security            | Weak          | Strong           |
+| Scalability         | Low           | High             |
+| Multi-Agent Support | Limited       | Excellent        |
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Storing too much in short-term memory
+* Not chunking documents
+* No memory cleanup strategy
+* Tight coupling between agent & memory
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Memory is critical for Agentic AI
+* MCP standardizes memory access
+* Enables multi-agent collaboration
+* Supports scalable and secure AI systems
+* Reduces repeated computation
+
