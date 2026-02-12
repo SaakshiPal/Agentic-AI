@@ -1,0 +1,199 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖🔗 Week-3 | Day-4 – Context-Sharing Agent System using MCP
+
+This document explains how to design a **multi-agent system** where agents share memory and context using **Model Context Protocol (MCP)**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is a Context-Sharing Agent System?
+
+A context-sharing system is where:
+
+* Multiple agents work together
+* All agents access shared memory
+* Information flows between agents
+* Tasks are divided intelligently
+
+👉 MCP enables structured and secure context sharing.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Why Context Sharing is Important?
+
+Without context sharing:
+
+* Agents repeat tasks
+* Data becomes inconsistent
+* Results conflict
+* Workflow breaks
+
+With context sharing:
+
+* Unified memory
+* Better coordination
+* Efficient task execution
+* Scalable Agentic AI
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 3. High-Level Architecture
+
+```text
+                User
+                  ↓
+           Planner Agent
+                  ↓
+     ┌────────────┼────────────┐
+     ↓            ↓            ↓
+Research     Data Agent     Writer Agent
+ Agent                        ↓
+     └────────────┬────────────┘
+                  ↓
+           Shared Memory (Vector DB)
+                  ↓
+                MCP Server
+                  ↓
+              External Tools
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. Key Components
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.1 Planner Agent
+
+* Breaks goal into sub-tasks
+* Assigns tasks to other agents
+
+---
+
+🔹 4.2 Worker Agents
+
+Examples:
+
+* Research agent
+* Data processing agent
+* Writing agent
+* Validation agent
+
+Each agent:
+
+* Reads from shared memory
+* Writes new results back
+
+---
+
+🔹 4.3 Shared Memory
+
+* Vector database
+* File storage
+* Structured database
+* Maintains context across steps
+
+---
+
+🔹 4.4 MCP Layer
+
+MCP:
+
+* Standardizes memory access
+* Controls permissions
+* Ensures secure communication
+* Handles tool execution
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 5. Execution Flow
+
+Step 1: User Goal
+
+```text
+"Generate monthly sales report"
+```
+
+Step 2: Planner Agent
+
+Breaks into:
+
+* Fetch sales data
+* Analyze trends
+* Generate summary
+* Create report
+
+---
+
+Step 3: Worker Agents Execute
+
+Each agent:
+
+* Retrieves relevant context via MCP
+* Performs action
+* Stores output
+
+---
+
+Step 4: Final Output
+
+Writer agent compiles everything
+Final response delivered to user
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. Simple Conceptual Code Structure
+
+```python
+class Agent:
+    def __init__(self, name, memory):
+        self.name = name
+        self.memory = memory
+
+    def perform_task(self, task):
+        context = self.memory.retrieve(task)
+        result = f"{self.name} completed {task}"
+        self.memory.store(result)
+        return result
+```
+
+Shared memory accessed through MCP abstraction.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. Benefits of MCP-Based Context Sharing
+
+* Loose coupling between agents
+* Scalable architecture
+* Secure data handling
+* Supports enterprise AI systems
+* Reduces hallucinations
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. Real-World Applications
+
+* Autonomous research assistants
+* Business workflow automation
+* AI DevOps pipelines
+* Multi-agent coding assistants
+* Intelligent data analytics systems
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 9. Challenges in Context Sharing
+
+* Memory overload
+* Poor task coordination
+* Context pollution
+* Synchronization issues
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Context sharing is critical in multi-agent systems
+* MCP acts as the communication backbone
+* Shared memory improves consistency
+* Good architecture = scalable Agentic AI
+
