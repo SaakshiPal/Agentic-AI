@@ -1,0 +1,191 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖🧠 Week-3 | Day-5 – Simple Chatbot using Vector Embeddings
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+This document explains how to build a **simple chatbot with memory** using:
+
+* Embeddings
+* Vector Database
+* Similarity Search
+* LLM
+
+This is the foundation of **RAG (Retrieval-Augmented Generation)**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. Why Normal Chatbots Fail?
+
+Traditional chatbots:
+
+* Forget past context
+* Do not understand document meaning
+* Cannot search knowledge intelligently
+
+👉 Solution: **Embeddings + Vector Database**
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. What We Are Building
+
+A chatbot that:
+
+1. Converts documents into embeddings
+2. Stores them in a vector database
+3. Converts user query into embedding
+4. Finds similar content
+5. Sends retrieved context to LLM
+6. Generates accurate answer
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 3. System Architecture
+
+```text
+User Query
+    ↓
+Embedding Model
+    ↓
+Vector Database (Chroma / FAISS)
+    ↓
+Top Similar Chunks Retrieved
+    ↓
+LLM (with context)
+    ↓
+Final Response
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📦 4. Tools Used
+
+* Embedding model (Hugging Face / OpenAI)
+* Vector DB (Chroma or FAISS)
+* Python
+* LLM (local or API)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 5. Step-by-Step Implementation
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 1: Install Required Libraries
+
+```bash
+pip install sentence-transformers chromadb
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 2: Create Embeddings
+
+```python
+from sentence_transformers import SentenceTransformer
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+documents = [
+    "Agentic AI systems can reason and act.",
+    "Vector databases store embeddings.",
+    "MCP helps agents communicate with tools."
+]
+
+embeddings = model.encode(documents)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 3: Store in Vector Database (Chroma Example)
+
+```python
+import chromadb
+
+client = chromadb.Client()
+collection = client.create_collection("chatbot_memory")
+
+for i, doc in enumerate(documents):
+    collection.add(
+        documents=[doc],
+        embeddings=[embeddings[i]],
+        ids=[str(i)]
+    )
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 4: Query Similar Content
+
+```python
+query = "How do agents use memory?"
+query_embedding = model.encode([query])
+
+results = collection.query(
+    query_embeddings=query_embedding,
+    n_results=2
+)
+
+print(results["documents"])
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 5: Send Retrieved Context to LLM
+
+```python
+context = results["documents"]
+
+prompt = f"""
+Answer the question using the context below:
+
+Context: {context}
+Question: {query}
+"""
+
+print(prompt)
+```
+
+(You can send this to any LLM like Ollama or Hugging Face.)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. How This Improves Chatbot
+
+| Without Embeddings | With Embeddings       |
+| ------------------ | --------------------- |
+| No memory          | Long-term memory      |
+| Random answers     | Context-aware         |
+| Hallucination      | Reduced hallucination |
+| No search          | Semantic search       |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 7. Why This is Important for Agentic AI
+
+This enables:
+
+* Memory retrieval
+* Knowledge grounding
+* Context awareness
+* Multi-step reasoning
+
+👉 This is the base of **RAG systems**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Not chunking large documents
+* Using too large embeddings model on low RAM
+* Storing full documents instead of chunks
+* Not limiting token size
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Embeddings convert meaning into vectors
+* Vector DB enables semantic search
+* Retrieved context improves LLM responses
+* This is foundation of RAG & Agentic AI
+
