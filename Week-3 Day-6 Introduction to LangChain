@@ -1,0 +1,203 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔗🤖 Week-3 | Day-6 – Introduction to LangChain
+
+This document introduces **LangChain**, one of the most popular frameworks used to build **LLM applications and Agentic AI systems**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is LangChain?
+
+**LangChain** is a framework that helps developers:
+
+* Connect LLMs with tools
+* Add memory to chatbots
+* Build RAG systems
+* Create agents
+* Chain multiple AI steps together
+
+👉 It simplifies building **Agentic AI applications**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Simple Definition
+
+> LangChain = A framework to build intelligent applications using LLMs, tools, and memory.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Why Do We Need LangChain?
+
+Without LangChain:
+
+* Manual prompt engineering
+* Custom tool integrations
+* Complex memory handling
+* Hard-to-manage pipelines
+
+With LangChain:
+
+* Prebuilt components
+* Easy tool integration
+* Built-in memory modules
+* Clean architecture
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 3. Core Components of LangChain
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3.1 LLMs
+
+Connect to:
+
+* OpenAI
+* Hugging Face
+* Ollama
+* Local models
+
+Example:
+
+```python
+from langchain.llms import OpenAI
+
+llm = OpenAI()
+```
+
+---
+
+🔹 3.2 Prompts
+
+Structured prompt templates.
+
+```python
+from langchain.prompts import PromptTemplate
+
+template = PromptTemplate(
+    input_variables=["topic"],
+    template="Explain {topic} in simple terms."
+)
+```
+
+---
+
+🔹 3.3 Chains
+
+Chains connect multiple steps together.
+
+```text
+Input → Prompt → LLM → Output
+```
+
+Example:
+
+```python
+from langchain.chains import LLMChain
+
+chain = LLMChain(llm=llm, prompt=template)
+```
+
+---
+
+🔹 3.4 Memory
+
+Stores conversation history.
+
+Types:
+
+* ConversationBufferMemory
+* ConversationSummaryMemory
+
+---
+
+🔹 3.5 Tools
+
+Agents can use tools like:
+
+* Search APIs
+* Calculators
+* Databases
+* File systems
+
+---
+
+🔹 3.6 Agents
+
+Agents:
+
+* Decide which tool to use
+* Reason step-by-step
+* Execute actions
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. Simple LangChain Example
+
+```python
+from langchain.llms import OpenAI
+
+llm = OpenAI()
+response = llm("What is Agentic AI?")
+print(response)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. How LangChain Helps in Agentic AI
+
+LangChain makes it easy to:
+
+* Build RAG pipelines
+* Add memory
+* Connect vector databases
+* Create multi-step reasoning systems
+* Integrate tools
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 6. Typical LangChain Workflow
+
+```text
+User Input
+   ↓
+Prompt Template
+   ↓
+LLM
+   ↓
+Memory Update
+   ↓
+Tool Call (if needed)
+   ↓
+Final Output
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. LangChain vs Raw LLM API
+
+| Feature          | Raw LLM | LangChain  |
+| ---------------- | ------- | ---------- |
+| Prompt Handling  | Manual  | Structured |
+| Tool Integration | Custom  | Built-in   |
+| Memory           | Manual  | Built-in   |
+| Agents           | Hard    | Easy       |
+| Scalability      | Low     | High       |
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Overcomplicating chains
+* Ignoring memory design
+* Not understanding token limits
+* Mixing too many tools at once
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* LangChain simplifies LLM app development
+* Supports memory + tools + chains
+* Core framework for Agentic AI
+* Enables scalable AI architectures
