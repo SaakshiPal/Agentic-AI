@@ -1,0 +1,212 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠🔗 Week-4 | Day-1 – Introduction to LangGraph
+
+This document introduces **LangGraph**, a framework built on top of LangChain that enables **stateful, multi-step, and multi-agent workflows** using graph-based architecture.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is LangGraph?
+
+**LangGraph** is a framework that allows you to:
+
+* Build stateful AI applications
+* Create multi-step workflows
+* Design multi-agent systems
+* Control execution flow using graphs
+
+👉 It extends LangChain for **complex Agentic AI systems**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Simple Definition
+
+> LangGraph = A graph-based orchestration framework for building stateful AI agents.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Why LangGraph is Needed?
+
+LangChain is great for:
+
+* Chains
+* Basic agents
+* RAG
+
+But when workflows become complex:
+
+* Multiple decision points
+* Conditional branches
+* Looping behavior
+* State persistence
+
+👉 LangGraph handles this better.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 3. Graph-Based Thinking
+
+Instead of linear chains:
+
+```text
+Step 1 → Step 2 → Step 3
+```
+
+LangGraph uses nodes and edges:
+
+```text
+Node A → Node B
+   ↓         ↑
+Node C ← Node D
+```
+
+This allows:
+
+* Branching
+* Loops
+* Conditional execution
+
+---
+
+📌 4. Core Concepts in LangGraph
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.1 Nodes
+
+Each node represents:
+
+* A function
+* An LLM call
+* A tool execution
+* An agent action
+
+Example:
+
+```text
+Planner Node
+Research Node
+Writer Node
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.2 Edges
+
+Edges define:
+
+* Flow between nodes
+* Conditions for transitions
+* Execution paths
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.3 State
+
+State stores:
+
+* Memory
+* Intermediate results
+* Context variables
+
+LangGraph is **stateful by design**.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.4 Graph Execution Engine
+
+Controls:
+
+* Node execution
+* Conditional branching
+* Loop handling
+* Error handling
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. LangGraph vs LangChain
+
+| Feature               | LangChain | LangGraph   |
+| --------------------- | --------- | ----------- |
+| Workflow              | Linear    | Graph-based |
+| State Handling        | Basic     | Advanced    |
+| Loops                 | Limited   | Supported   |
+| Multi-Agent           | Basic     | Advanced    |
+| Complex Orchestration | Hard      | Easy        |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 6. Typical LangGraph Workflow
+
+Example: Report Generation Agent
+
+```text
+User Request
+   ↓
+Planner Node
+   ↓
+Research Node
+   ↓
+Analysis Node
+   ↓
+Writer Node
+   ↓
+Review Node
+   ↓
+Final Output
+```
+
+With ability to:
+
+* Re-run research if needed
+* Loop back on errors
+* Branch based on conditions
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. Simple Conceptual Example (Pseudo Code)
+
+```python
+def planner(state):
+    state["task"] = "Research AI"
+    return state
+
+def researcher(state):
+    state["data"] = "Collected data"
+    return state
+
+def writer(state):
+    state["report"] = "Generated report"
+    return state
+```
+
+These functions become **nodes in a graph**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. Where LangGraph is Used
+
+* Multi-agent systems
+* Autonomous research assistants
+* Complex RAG workflows
+* Enterprise AI orchestration
+* Long-running AI tasks
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Using LangGraph for simple tasks
+* Not managing state properly
+* Overcomplicating graph design
+* Ignoring error handling
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* LangGraph extends LangChain
+* Uses graph-based execution
+* Supports loops & conditions
+* Best for multi-agent systems
+* Designed for complex Agentic AI
