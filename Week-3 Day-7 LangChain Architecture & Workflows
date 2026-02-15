@@ -1,0 +1,273 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔗🧠 Week-3 | Day-7 – LangChain Architecture & Workflows
+
+This document explains how **LangChain** is structured internally and how workflows are built using its components in **Agentic AI systems**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. Why Understand LangChain Architecture?
+
+Understanding architecture helps you:
+
+* Design scalable AI systems
+* Avoid messy pipelines
+* Build multi-step workflows
+* Prepare for interviews
+* Move from beginner → AI engineer mindset
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 2. High-Level LangChain Architecture
+
+```text
+User Input
+   ↓
+Prompt Template
+   ↓
+LLM
+   ↓
+Memory (Optional)
+   ↓
+Tools (Optional)
+   ↓
+Output
+```
+
+LangChain acts as a **coordinator** between:
+
+* LLMs
+* Prompts
+* Memory
+* Tools
+* Chains
+* Agents
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 3. Core Architectural Layers
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3.1 Model Layer (LLM Layer)
+
+Responsible for:
+
+* Text generation
+* Reasoning
+* Decision making
+
+Supports:
+
+* OpenAI
+* Hugging Face
+* Ollama
+* Local models
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3.2 Prompt Layer
+
+Handles:
+
+* Structured prompts
+* Dynamic variable insertion
+* Template reuse
+
+Example:
+
+```text
+"Explain {topic} in simple terms."
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3.3 Chain Layer
+
+Chains connect multiple components.
+
+Example:
+
+```text
+Input → Prompt → LLM → Output
+```
+
+Types:
+
+* LLMChain
+* SequentialChain
+* SimpleChain
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3.4 Memory Layer
+
+Adds context persistence.
+
+Types:
+
+* ConversationBufferMemory
+* ConversationSummaryMemory
+* VectorStoreRetrieverMemory
+
+Used in:
+
+* Chatbots
+* Multi-step agents
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3.5 Tool Layer
+
+Allows LLM to:
+
+* Search web
+* Query database
+* Run Python code
+* Access files
+
+Tools are invoked when:
+
+* The agent decides it needs external info
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3.6 Agent Layer
+
+Agents:
+
+* Decide which tool to use
+* Plan actions
+* Execute multi-step reasoning
+
+This is the **core of Agentic AI in LangChain**.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 4. LangChain Workflow Types
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.1 Simple LLM Workflow
+
+```text
+User → Prompt → LLM → Response
+```
+
+Use Case:
+
+* Basic Q&A
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.2 RAG Workflow
+
+```text
+User Query
+   ↓
+Retriever (Vector DB)
+   ↓
+Context
+   ↓
+LLM
+   ↓
+Final Answer
+```
+
+Use Case:
+
+* Document-based chatbot
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.3 Tool-Based Agent Workflow
+
+```text
+User Query
+   ↓
+Agent (LLM Reasoning)
+   ↓
+Tool Selection
+   ↓
+Tool Execution
+   ↓
+Observation
+   ↓
+Final Answer
+```
+
+Use Case:
+
+* Research assistant
+* Automation agent
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.4 Multi-Step Sequential Workflow
+
+```text
+Step 1 → Step 2 → Step 3 → Final Output
+```
+
+Use Case:
+
+* Report generation
+* Data analysis pipelines
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. LangChain Architecture vs Raw LLM API
+
+| Feature          | Raw LLM | LangChain  |
+| ---------------- | ------- | ---------- |
+| Prompt Handling  | Manual  | Structured |
+| Multi-step Logic | Hard    | Easy       |
+| Tool Integration | Custom  | Built-in   |
+| Memory           | Manual  | Built-in   |
+| Scalability      | Low     | High       |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. How LangChain Fits in Agentic AI
+
+LangChain enables:
+
+* Tool-using agents
+* Memory-aware agents
+* RAG systems
+* Multi-agent workflows
+* Scalable AI pipelines
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Using chains when agent is required
+* Overusing memory
+* Not controlling tool permissions
+* Ignoring token limits
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* LangChain organizes LLM apps into layers
+* Chains handle sequences
+* Agents handle decision-making
+* Memory improves context
+* Tools enable real-world interaction
+
+Understanding this makes you capable of designing **production-level Agentic AI systems** 🔥
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Week-3 Completed ✅
+
+You’ve now covered:
+
+* Rule-based agents
+* MCP
+* Memory & context sharing
+* Vector embedding chatbot
+* LangChain basics
+* LangChain architecture
