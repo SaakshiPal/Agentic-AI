@@ -1,0 +1,225 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖👥 Week-4 | Day-2 – Introduction to CrewAI & Parameters
+
+This document introduces **CrewAI**, a framework for building **role-based multi-agent systems** in Agentic AI.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is CrewAI?
+
+CrewAI is a framework that allows you to:
+
+* Create multiple AI agents
+* Assign specific roles
+* Define goals and tasks
+* Enable collaboration between agents
+* Build structured multi-agent workflows
+
+👉 It focuses on **role-based agent collaboration**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Simple Definition
+
+> CrewAI = A framework to create a team (“crew”) of AI agents working together toward a goal.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Why CrewAI is Important?
+
+In complex tasks:
+
+* One agent is not enough
+* Tasks need specialization
+* Planning and execution must be separated
+
+CrewAI helps by:
+
+* Assigning roles
+* Structuring responsibilities
+* Coordinating outputs
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 3. Core Concepts in CrewAI
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3.1 Agent
+
+An Agent in CrewAI has:
+
+* Role (What it does)
+* Goal (What it aims to achieve)
+* Backstory (Behavior/personality)
+* Tools (Optional)
+
+Example roles:
+
+* Researcher
+* Writer
+* Analyst
+* Reviewer
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3.2 Task
+
+A Task defines:
+
+* What needs to be done
+* Which agent performs it
+* Expected output
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3.3 Crew
+
+A Crew:
+
+* Combines multiple agents
+* Assigns tasks
+* Manages execution flow
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚙️ 4. Important Parameters in CrewAI
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.1 Agent Parameters
+
+When creating an agent, common parameters include:
+
+Role
+
+Defines the agent’s responsibility.
+
+```text
+"Senior AI Researcher"
+```
+
+Goal
+
+Defines the mission.
+
+```text
+"Research latest advancements in Agentic AI"
+```
+
+Backstory
+
+Adds personality & context.
+
+```text
+"Expert in distributed AI systems"
+```
+
+Tools
+
+Optional external capabilities:
+
+* Web search
+* Database access
+* APIs
+
+Verbose
+
+If `True`, prints reasoning steps.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.2 Task Parameters
+
+Common parameters:
+
+* Description
+* Expected Output
+* Assigned Agent
+* Tools required
+
+Example:
+
+```text
+"Write a summary report on findings."
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.3 Crew Parameters
+
+Important settings:
+
+* Agents list
+* Tasks list
+* Process type (Sequential / Hierarchical)
+* Verbose mode
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 5. CrewAI Workflow
+
+Example: AI Report Generation
+
+```text
+User Goal
+   ↓
+Planner Agent
+   ↓
+Research Agent
+   ↓
+Writer Agent
+   ↓
+Reviewer Agent
+   ↓
+Final Output
+```
+
+CrewAI manages:
+
+* Communication
+* Task order
+* Context sharing
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 6. CrewAI vs LangChain vs LangGraph
+
+| Feature                   | LangChain | LangGraph             | CrewAI        |
+| ------------------------- | --------- | --------------------- | ------------- |
+| Chains                    | ✅        | ✅                   | ❌            |
+| Graph Workflows           | ❌        | ✅                   | ❌            |
+| Role-Based Agents         | Limited   | Possible              | ✅            |
+| Multi-Agent Collaboration | Basic     | Advanced              | Very Easy     |
+| Best For                  | LLM apps  | Complex orchestration | Team-based AI |
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. When to Use CrewAI?
+
+Use CrewAI when:
+
+* Task needs multiple specialists
+* Clear role separation is required
+* Human-like collaboration is desired
+* Structured AI teams are needed
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Giving vague goals
+* Overlapping agent roles
+* Too many agents for simple tasks
+* No clear task sequencing
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* CrewAI builds role-based multi-agent systems
+* Each agent has role + goal + backstory
+* Tasks define work distribution
+* Crew coordinates execution
+* Ideal for structured collaborative AI
