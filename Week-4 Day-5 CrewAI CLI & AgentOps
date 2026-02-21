@@ -1,0 +1,239 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖🛠️📊 Week-4 | Day-5 – CrewAI CLI & AgentOps
+
+This document explains:
+
+* How to use **CrewAI CLI**
+* What is **AgentOps**
+* How to monitor, debug, and manage AI agents in production
+
+This is where Agentic AI becomes **deployable and observable**.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is CrewAI CLI?
+
+**CrewAI CLI (Command Line Interface)** is a tool that helps you:
+
+* Create CrewAI projects
+* Run agent workflows
+* Manage configurations
+* Debug multi-agent systems
+
+👉 It simplifies development & execution.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Why Use CrewAI CLI?
+
+Without CLI:
+
+* Manual project setup
+* Hard debugging
+* Messy configuration
+
+With CLI:
+
+* Structured project template
+* Organized execution
+* Easy workflow control
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 3. Basic CLI Workflow
+
+🔹 Install CrewAI
+
+```bash
+pip install crewai
+```
+
+---
+
+🔹 Create New Project
+
+```bash
+crewai create project my_project
+```
+
+This generates:
+
+```text
+my_project/
+ ├── agents.py
+ ├── tasks.py
+ ├── crew.py
+ ├── config.yaml
+ └── main.py
+```
+
+---
+
+🔹 Run the Crew
+
+```bash
+crewai run
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. CrewAI Project Structure
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 agents.py
+
+Defines:
+
+* Roles
+* Goals
+* Backstories
+* Tools
+
+---
+
+🔹 tasks.py
+
+Defines:
+
+* Task descriptions
+* Expected outputs
+* Assigned agents
+
+---
+
+🔹 crew.py
+
+Defines:
+
+* Agent list
+* Task list
+* Process type
+
+---
+
+🔹 config.yaml
+
+Defines:
+
+* LLM settings
+* Model parameters
+* API keys
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. What is AgentOps?
+
+**AgentOps** is a monitoring & observability platform for AI agents.
+
+It helps you:
+
+* Track agent performance
+* Log reasoning steps
+* Monitor token usage
+* Debug failures
+* Analyze workflows
+
+👉 Think of AgentOps as **DevOps for AI agents**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. Why AgentOps is Important
+
+In production:
+
+* Agents may fail
+* Tools may return errors
+* Tokens may exceed limits
+* Costs may increase
+
+AgentOps helps:
+
+* Debug easily
+* Track performance
+* Improve reliability
+* Monitor cost
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. AgentOps Capabilities
+
+* Execution logging
+* Token usage tracking
+* Error tracing
+* Performance analytics
+* Agent interaction monitoring
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. CrewAI + AgentOps Flow
+
+```text
+User Input
+   ↓
+CrewAI Execution
+   ↓
+Agent Reasoning
+   ↓
+Tool Calls
+   ↓
+AgentOps Logs Everything
+   ↓
+Monitoring Dashboard
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 9. Development vs Production
+
+| Feature    | Development | Production      |
+| ---------- | ----------- | --------------- |
+| Logging    | Basic       | Detailed        |
+| Monitoring | Manual      | AgentOps        |
+| Debugging  | Console     | Structured logs |
+| Scaling    | Local       | Managed         |
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 10. Best Practices
+
+✔ Use verbose mode in development
+✔ Use AgentOps for debugging
+✔ Track token usage
+✔ Monitor tool errors
+✔ Log agent decisions
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Ignoring logs
+* Not tracking token limits
+* Running multi-agent systems without monitoring
+* Hardcoding API keys
+* No error handling
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* CrewAI CLI simplifies project structure
+* AgentOps provides observability
+* Monitoring is critical in multi-agent systems
+* Production AI requires logging & debugging
+* Agentic AI must be measurable and trackable
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Week-4 Progress 🚀
+
+You now understand:
+
+* LangGraph
+* CrewAI architecture
+* Multi-agent collaboration
+* Knowledge & planning
+* CLI & monitoring tools
+
+You are now at **near production-level Agentic AI understanding** 🔥
