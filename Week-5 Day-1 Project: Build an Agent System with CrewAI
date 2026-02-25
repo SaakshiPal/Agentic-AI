@@ -1,0 +1,236 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀🤖 Week-5 | Day-1 – Project: Build an Agent System with CrewAI
+
+In this project, we will build a **multi-agent system** where:
+
+* A Planner breaks the task
+* A Research Agent gathers information
+* A Writer Agent generates content
+* A Reviewer Agent improves quality
+
+This is a **production-style Agentic AI system**.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. Project Goal
+
+Build an AI system that:
+
+👉 Takes a topic
+👉 Researches it
+👉 Creates a structured report
+👉 Reviews and improves it
+
+Example Input:
+
+```text
+"Latest trends in Agentic AI"
+```
+
+Example Output:
+
+* Structured report
+* Clear headings
+* Bullet points
+* Conclusion
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 2. System Architecture
+
+```text
+User Input
+   ↓
+Planner Agent
+   ↓
+Research Agent
+   ↓
+Writer Agent
+   ↓
+Reviewer Agent
+   ↓
+Final Output
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📁 3. Project Structure
+
+```text
+agent_system/
+ ├── agents.py
+ ├── tasks.py
+ ├── crew.py
+ ├── main.py
+ └── config.yaml
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚙️ 4. Step-by-Step Implementation
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 1: Install Dependencies
+
+```bash
+pip install crewai
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 2: Define Agents (`agents.py`)
+
+```python
+from crewai import Agent
+
+planner = Agent(
+    role="Project Planner",
+    goal="Break the user topic into structured research steps",
+    backstory="Expert in AI project planning",
+    verbose=True
+)
+
+researcher = Agent(
+    role="AI Research Specialist",
+    goal="Collect accurate and up-to-date information",
+    backstory="Experienced AI analyst",
+    verbose=True
+)
+
+writer = Agent(
+    role="Technical Writer",
+    goal="Create a clear and structured report",
+    backstory="Professional AI content writer",
+    verbose=True
+)
+
+reviewer = Agent(
+    role="Quality Reviewer",
+    goal="Improve clarity, structure, and correctness",
+    backstory="Senior editor with AI expertise",
+    verbose=True
+)
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 3: Define Tasks (`tasks.py`)
+
+```python
+from crewai import Task
+from agents import planner, researcher, writer, reviewer
+
+plan_task = Task(
+    description="Create a research plan for the topic.",
+    expected_output="Step-by-step structured plan.",
+    agent=planner
+)
+
+research_task = Task(
+    description="Research the topic thoroughly.",
+    expected_output="Detailed findings with key insights.",
+    agent=researcher
+)
+
+write_task = Task(
+    description="Write a full structured report.",
+    expected_output="Formatted report with headings and bullet points.",
+    agent=writer
+)
+
+review_task = Task(
+    description="Review and improve the report.",
+    expected_output="Final polished version.",
+    agent=reviewer
+)
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 4: Create the Crew (`crew.py`)
+
+```python
+from crewai import Crew
+from agents import planner, researcher, writer, reviewer
+from tasks import plan_task, research_task, write_task, review_task
+
+crew = Crew(
+    agents=[planner, researcher, writer, reviewer],
+    tasks=[plan_task, research_task, write_task, review_task],
+    verbose=True
+)
+```
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 5: Run the System (`main.py`)
+
+```python
+from crew import crew
+
+result = crew.kickoff(inputs={"topic": "Latest trends in Agentic AI"})
+print(result)
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 5. Execution Flow
+
+```text
+Topic Received
+   ↓
+Planner creates structure
+   ↓
+Researcher gathers knowledge
+   ↓
+Writer builds report
+   ↓
+Reviewer improves quality
+   ↓
+Final Output
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 6. What This Project Demonstrates
+
+✔ Multi-agent collaboration
+✔ Role-based specialization
+✔ Sequential execution
+✔ Structured task delegation
+✔ Agentic AI workflow
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. How to Upgrade This Project
+
+You can improve it by adding:
+
+* Web search tool
+* Vector database (RAG)
+* Shared memory
+* Hierarchical process
+* AgentOps monitoring
+* Local LLM via Ollama
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Vague task descriptions
+* Overlapping agent roles
+* Too many agents
+* No clear expected output
+* Not testing agents individually
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯Key Takeaways
+
+* CrewAI enables team-based AI systems
+* Clear roles improve output quality
+* Structured tasks reduce hallucination
+* Multi-agent systems are scalable
+* This is production-style Agentic AI
