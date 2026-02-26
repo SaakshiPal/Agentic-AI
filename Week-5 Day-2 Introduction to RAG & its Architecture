@@ -1,0 +1,237 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠📚 Week-5 | Day-2 – Introduction to RAG & Its Architecture
+
+This document explains:
+
+* What is **RAG (Retrieval-Augmented Generation)**
+* Why RAG is needed
+* How RAG architecture works
+* How it fits into Agentic AI systems
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is RAG?
+
+**RAG (Retrieval-Augmented Generation)** is a technique where:
+
+👉 An LLM retrieves relevant information
+👉 Then uses that information to generate accurate responses
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Simple Definition
+
+> RAG = Retrieve relevant knowledge first, then generate response.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Why Do We Need RAG?
+
+LLMs alone:
+
+* Forget facts
+* Hallucinate
+* Have limited knowledge cutoff
+* Cannot access private documents
+
+RAG solves this by:
+
+✔ Using external knowledge
+✔ Reducing hallucination
+✔ Accessing real-time or private data
+✔ Improving factual accuracy
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 3. Traditional LLM vs RAG
+
+| Feature             | Traditional LLM | RAG   |
+| ------------------- | --------------- | ----- |
+| External Knowledge  | ❌               | ✅     |
+| Private Data Access | ❌               | ✅     |
+| Hallucination Risk  | High            | Lower |
+| Contextual Accuracy | Limited         | High  |
+| Real-Time Updates   | ❌               | ✅     |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. RAG High-Level Architecture
+
+```text
+User Query
+    ↓
+Embedding Model
+    ↓
+Vector Database
+    ↓
+Retrieve Relevant Chunks
+    ↓
+Send Context + Query to LLM
+    ↓
+Generated Answer
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. RAG Architecture Components
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5.1 Document Loader
+
+Loads data from:
+
+* PDFs
+* Text files
+* Websites
+* Databases
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5.2 Text Chunking
+
+Large documents are split into:
+
+* Small chunks (e.g., 500–1000 tokens)
+* Overlapping segments
+
+Why?
+
+* Improves retrieval accuracy
+* Fits model context window
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5.3 Embedding Model
+
+Converts text into vectors.
+
+Example:
+
+```text
+"Agentic AI improves automation"
+→ [0.21, 0.98, 0.45, ...]
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5.4 Vector Database
+
+Stores embeddings.
+
+Examples:
+
+* Chroma
+* FAISS
+* Qdrant
+
+Used for:
+
+* Semantic similarity search
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5.5 Retriever
+
+Finds most relevant chunks based on query embedding.
+
+---
+
+🔹 5.6 LLM Generator
+
+Receives:
+
+* User question
+* Retrieved context
+
+Generates grounded response.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. Full RAG Flow
+
+```text
+Step 1: Load documents
+Step 2: Split into chunks
+Step 3: Generate embeddings
+Step 4: Store in vector DB
+Step 5: User asks question
+Step 6: Convert question to embedding
+Step 7: Retrieve similar chunks
+Step 8: Send context + question to LLM
+Step 9: Generate final answer
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. RAG in Agentic AI
+
+In Agentic AI:
+
+* Agents retrieve knowledge
+* Memory is powered by vector DB
+* Agents reason with retrieved context
+* Tools may update knowledge base
+
+RAG becomes the **long-term memory system**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. Types of RAG Systems
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1️⃣ Basic RAG
+
+* Single retrieval step
+* Simple LLM generation
+
+---
+
+🔹 2️⃣ Advanced RAG
+
+* Re-ranking
+* Multi-query retrieval
+* Hybrid search
+* Memory updates
+
+---
+
+🔹 3️⃣ Agentic RAG
+
+* Agents decide when to retrieve
+* Agents refine queries
+* Multi-step retrieval reasoning
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 9. Common RAG Mistakes
+
+* Not chunking properly
+* Too large chunk size
+* Poor embedding model
+* Not limiting retrieved results
+* Ignoring token limits
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 10. RAG vs Fine-Tuning
+
+| Feature              | RAG               | Fine-Tuning       |
+| -------------------- | ----------------- | ----------------- |
+| Uses External Data   | ✅                | ❌               |
+| Model Weights Change | ❌                | ✅               |
+| Cost                 | Lower             | Higher            |
+| Easy to Update       | Yes               | Hard              |
+| Best For             | Dynamic knowledge | Behavioral change |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* RAG improves accuracy
+* Uses embeddings + vector DB
+* Reduces hallucination
+* Supports private & real-time data
+* Core component of modern Agentic AI systems
