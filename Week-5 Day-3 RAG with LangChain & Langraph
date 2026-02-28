@@ -1,0 +1,251 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠📚🔗 Week-5 | Day-3 – RAG with LangChain & LangGraph
+
+This document explains how to build **Retrieval-Augmented Generation (RAG)** systems using:
+
+* **LangChain**
+* **LangGraph**
+
+This is the foundation of **scalable, stateful Agentic AI systems**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What We Are Building
+
+A RAG system that:
+
+✔ Loads documents
+✔ Splits into chunks
+✔ Creates embeddings
+✔ Stores in vector database
+✔ Retrieves relevant context
+✔ Generates accurate response
+
+Then we upgrade it using **LangGraph for stateful orchestration**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. RAG with LangChain (Standard Approach)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 1: Install Dependencies
+
+```bash
+pip install langchain chromadb sentence-transformers
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 2: Load & Split Documents
+
+```python
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+documents = ["Agentic AI improves automation and reasoning."]
+splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+
+docs = splitter.create_documents(documents)
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 3: Create Embeddings
+
+```python
+from langchain.embeddings import HuggingFaceEmbeddings
+
+embedding = HuggingFaceEmbeddings()
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 4: Store in Vector Database
+
+```python
+from langchain.vectorstores import Chroma
+
+vectorstore = Chroma.from_documents(docs, embedding)
+retriever = vectorstore.as_retriever()
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 5: Create RAG Chain
+
+```python
+from langchain.chains import RetrievalQA
+from langchain.llms import OpenAI
+
+llm = OpenAI()
+
+qa_chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever=retriever
+)
+
+response = qa_chain.run("What is Agentic AI?")
+print(response)
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 3. LangChain RAG Architecture
+
+```text
+User Query
+   ↓
+Retriever (Vector DB)
+   ↓
+Relevant Documents
+   ↓
+LLM
+   ↓
+Final Answer
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. Limitations of Basic RAG
+
+* Linear workflow
+* No conditional logic
+* No looping
+* Limited state control
+
+This is where **LangGraph** becomes powerful.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. RAG with LangGraph (Stateful Version)
+
+LangGraph enables:
+
+✔ Stateful memory
+✔ Conditional retrieval
+✔ Multi-step reasoning
+✔ Looping until answer quality improves
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 LangGraph Conceptual Workflow
+
+```text
+User Query
+   ↓
+Retrieve Node
+   ↓
+Evaluate Node
+   ↓
+If context insufficient → Retrieve again
+   ↓
+Generate Answer Node
+   ↓
+Return Output
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Conceptual LangGraph Node Example
+
+```python
+def retrieve(state):
+    docs = retriever.get_relevant_documents(state["query"])
+    state["docs"] = docs
+    return state
+
+def generate(state):
+    context = state["docs"]
+    answer = llm(f"Answer using context: {context}")
+    state["answer"] = answer
+    return state
+```
+
+Nodes are connected in a graph instead of a simple chain.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. LangChain vs LangGraph for RAG
+
+| Feature           | LangChain | LangGraph |
+| ----------------- | --------- | --------- |
+| Simple RAG        | ✅         | ✅         |
+| Stateful          | Limited   | Strong    |
+| Conditional Logic | Basic     | Advanced  |
+| Looping           | ❌         | ✅         |
+| Multi-Agent       | Basic     | Advanced  |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. When to Use What?
+
+ Use LangChain RAG if:
+
+* Simple document QA
+* No complex reasoning
+* Fast prototype
+
+Use LangGraph RAG if:
+
+* Multi-step validation
+* Complex workflows
+* Conditional logic
+* Multi-agent RAG
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. Advanced RAG Design with LangGraph
+
+You can add:
+
+✔ Re-ranking step
+✔ Answer validation node
+✔ Fact-checking node
+✔ Retry mechanism
+✔ Tool-based enrichment
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 9. Production RAG Architecture
+
+```text
+Frontend
+   ↓
+Backend API
+   ↓
+LangGraph Orchestration
+   ↓
+Retriever (Vector DB)
+   ↓
+LLM
+   ↓
+Response
+```
+
+Optional:
+
+* Logging
+* Monitoring
+* Memory updates
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Large chunk size
+* No chunk overlap
+* No evaluation step
+* Not limiting retrieved documents
+* Ignoring token limits
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* RAG improves factual accuracy
+* LangChain simplifies basic RAG
+* LangGraph enables advanced orchestration
+* Stateful RAG is better for complex systems
+* RAG is core to Agentic AI memory systems
+
