@@ -1,0 +1,241 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🦙📚 Week-5 | Day-4 – Introduction to LlamaIndex
+
+This document introduces **LlamaIndex**, a powerful framework designed specifically for:
+
+* RAG systems
+* Data indexing
+* Knowledge retrieval
+* Structured data integration
+
+It is widely used in **production-level Agentic AI systems**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is LlamaIndex?
+
+**LlamaIndex** is a framework that helps:
+
+✔ Connect LLMs to external data
+✔ Structure and index documents
+✔ Build advanced retrieval pipelines
+✔ Manage knowledge efficiently
+
+👉 It focuses heavily on **data indexing + retrieval optimization**.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Simple Definition
+
+> LlamaIndex = A data framework that helps LLMs retrieve and reason over large datasets efficiently.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Why Do We Need LlamaIndex?
+
+When data becomes:
+
+* Large
+* Complex
+* Structured
+* Multi-source
+
+Basic RAG may struggle.
+
+LlamaIndex provides:
+
+✔ Better indexing
+✔ Flexible retrieval
+✔ Advanced query engines
+✔ Structured data handling
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 3. LlamaIndex vs LangChain
+
+| Feature         | LangChain         | LlamaIndex    |
+| --------------- | ----------------- | ------------- |
+| Focus           | LLM workflows     | Data indexing |
+| RAG             | Basic to Advanced | Advanced      |
+| Multi-Agent     | Yes               | Limited       |
+| Data Handling   | Moderate          | Strong        |
+| Structured Data | Limited           | Strong        |
+
+👉 Many production systems use **LangChain + LlamaIndex together**.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. Core Concepts in LlamaIndex
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.1 Documents
+
+Raw input data:
+
+* PDFs
+* Text files
+* Databases
+* APIs
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.2 Nodes
+
+Documents are split into **nodes** (chunks).
+
+Nodes are indexed and retrievable.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.3 Index
+
+The heart of LlamaIndex.
+
+Index:
+
+* Stores structured representation
+* Connects embeddings
+* Enables efficient retrieval
+
+Types:
+
+* VectorStoreIndex
+* TreeIndex
+* KeywordTableIndex
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4.4 Query Engine
+
+Handles:
+
+* Query processing
+* Retrieval
+* Context injection
+* Response generation
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. Basic LlamaIndex Workflow
+
+```text id="c8zw2h"
+Load Documents
+   ↓
+Create Nodes
+   ↓
+Build Index
+   ↓
+Query Engine
+   ↓
+Retrieve Context
+   ↓
+LLM Generates Answer
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. Simple LlamaIndex Example
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 1: Install
+
+```bash id="4dzrnl"
+pip install llama-index
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 2: Basic Usage
+
+```python id="5rsj6n"
+from llama_index.core import VectorStoreIndex
+from llama_index.core import SimpleDirectoryReader
+
+documents = SimpleDirectoryReader("data").load_data()
+
+index = VectorStoreIndex.from_documents(documents)
+
+query_engine = index.as_query_engine()
+
+response = query_engine.query("What is Agentic AI?")
+print(response)
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. Advanced Capabilities
+
+LlamaIndex supports:
+
+✔ Multi-document retrieval
+✔ Structured data (SQL integration)
+✔ Hybrid search
+✔ Recursive retrieval
+✔ Response synthesis strategies
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. LlamaIndex Architecture
+
+```text id="xqtfh1"
+Data Sources
+   ↓
+Document Loader
+   ↓
+Node Parser
+   ↓
+Index Builder
+   ↓
+Query Engine
+   ↓
+LLM
+   ↓
+Answer
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 9. When to Use LlamaIndex?
+
+Use LlamaIndex when:
+
+* Large enterprise data
+* Structured databases
+* Complex retrieval pipelines
+* Multi-layer indexing
+* Knowledge-heavy applications
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 10. LlamaIndex in Agentic AI
+
+In Agentic systems:
+
+* Acts as long-term memory
+* Supports complex retrieval
+* Integrates with LangChain
+* Works with vector databases
+* Powers intelligent agents
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Not choosing correct index type
+* Large chunk size
+* Ignoring metadata
+* Not optimizing retrieval strategy
+* Overcomplicating pipeline
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* LlamaIndex is data-first framework
+* Stronger indexing than basic RAG
+* Excellent for structured & enterprise data
+* Works well with LangChain
+* Ideal for production-grade knowledge systems
