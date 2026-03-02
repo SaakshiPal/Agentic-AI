@@ -1,0 +1,251 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🦙🚀 Week-5 | Day-5 – Building AI Applications with LlamaIndex
+
+This document explains how to build **real-world AI applications** using LlamaIndex for:
+
+* Document-based Q&A
+* Knowledge assistants
+* Database-connected AI
+* Enterprise RAG systems
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. Why Use LlamaIndex for Applications?
+
+When building AI apps, we need:
+
+✔ Efficient document indexing
+✔ Fast retrieval
+✔ Structured data integration
+✔ Scalable architecture
+✔ Clean abstraction layer
+
+LlamaIndex specializes in **data-aware AI systems**.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Application Architecture Overview
+
+```text id="apq9fk"
+User Query
+   ↓
+Backend API
+   ↓
+LlamaIndex Query Engine
+   ↓
+Retriever (Index)
+   ↓
+LLM
+   ↓
+Response
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 3. Step-by-Step: Build a Simple AI Q&A App
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 1: Install Dependencies
+
+```bash id="m9sdv1"
+pip install llama-index openai
+```
+
+---
+
+🔹 Step 2: Load Documents
+
+```python id="xt3o2q"
+from llama_index.core import SimpleDirectoryReader
+
+documents = SimpleDirectoryReader("data").load_data()
+```
+
+Place your PDFs or text files inside `data/`.
+
+---
+
+🔹 Step 3: Create Index
+
+```python id="wr5d7t"
+from llama_index.core import VectorStoreIndex
+
+index = VectorStoreIndex.from_documents(documents)
+```
+
+This automatically:
+
+* Splits documents
+* Creates embeddings
+* Stores vectors
+
+---
+
+🔹 Step 4: Create Query Engine
+
+```python id="k7pd84"
+query_engine = index.as_query_engine()
+```
+
+---
+
+🔹 Step 5: Query the System
+
+```python id="y3uv1m"
+response = query_engine.query("Explain Agentic AI architecture.")
+print(response)
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. Converting This Into a Web App (Concept)
+
+You can integrate with:
+
+* FastAPI
+* Flask
+* Streamlit
+
+Example API flow:
+
+```text id="sl7r3n"
+Frontend Input
+   ↓
+Backend API
+   ↓
+LlamaIndex Query Engine
+   ↓
+Return Answer
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. Advanced Application Features
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1️⃣ Metadata Filtering
+
+Filter documents based on:
+
+* Date
+* Category
+* Source
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2️⃣ Multi-Index Systems
+
+Use multiple indexes:
+
+* Technical docs index
+* Business docs index
+* Research papers index
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3️⃣ Hybrid Retrieval
+
+Combine:
+
+* Keyword search
+* Vector similarity
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4️⃣ Structured Data Integration
+
+Connect to:
+
+* SQL databases
+* CSV files
+* APIs
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. Example: SQL + LlamaIndex
+
+LlamaIndex can convert natural language into SQL queries and retrieve results from databases.
+
+```text id="6pt1ml"
+User: "Show last month sales"
+   ↓
+LLM generates SQL
+   ↓
+Query database
+   ↓
+Return results
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. Application Design Patterns
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1️⃣ Knowledge Assistant
+
+* Company documentation assistant
+* HR chatbot
+* Policy explainer
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2️⃣ Research Assistant
+
+* Academic paper retrieval
+* Citation assistant
+* Literature review generator
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3️⃣ Enterprise AI Assistant
+
+* Internal analytics
+* Financial reporting
+* DevOps assistant
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. LlamaIndex vs Basic RAG in Applications
+
+| Feature            | Basic RAG | LlamaIndex |
+| ------------------ | --------- | ---------- |
+| Document Handling  | Basic     | Advanced   |
+| Multi-Index        | ❌       | ✅         |
+| SQL Integration    | ❌       | ✅         |
+| Metadata Filtering | Limited   | Strong     |
+| Enterprise Ready   | Moderate  | High       |
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 9. Best Practices for Production Apps
+
+✔ Use proper chunk size
+✔ Add metadata
+✔ Monitor token usage
+✔ Cache embeddings
+✔ Use scalable vector DB
+✔ Add logging & monitoring
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Loading too large documents at once
+* No metadata usage
+* No retrieval limit
+* Ignoring token limits
+* Not separating indexing from querying
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* LlamaIndex simplifies data-aware AI apps
+* Strong indexing system
+* Excellent for enterprise knowledge systems
+* Works well with LangChain & CrewAI
+* Ideal for scalable RAG applications
