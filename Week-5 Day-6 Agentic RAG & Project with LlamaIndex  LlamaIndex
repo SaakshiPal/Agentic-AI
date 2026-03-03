@@ -1,0 +1,219 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🤖🦙📚 Week-5 | Day-6 – Agentic RAG & Project with LlamaIndex
+
+This document explains:
+
+* What is **Agentic RAG**
+* How it differs from basic RAG
+* How to build an Agentic RAG system using **LlamaIndex**
+* A mini project implementation
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is Agentic RAG?
+
+Basic RAG:
+
+```text
+Query → Retrieve → Generate → Done
+```
+
+Agentic RAG:
+
+```text
+Query
+  ↓
+Agent decides retrieval strategy
+  ↓
+Retrieve
+  ↓
+Evaluate context
+  ↓
+Refine query (if needed)
+  ↓
+Retrieve again
+  ↓
+Generate answer
+```
+
+👉 Agentic RAG adds **planning + evaluation + iteration**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Simple Definition
+
+> Agentic RAG = RAG system where an agent controls how and when retrieval happens.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Why Agentic RAG is Powerful
+
+✔ Reduces hallucination
+✔ Supports multi-step reasoning
+✔ Improves retrieval accuracy
+✔ Handles complex queries
+✔ Enables dynamic planning
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 3. Agentic RAG Architecture
+
+```text
+User Query
+   ↓
+Planner Agent
+   ↓
+Retriever (LlamaIndex)
+   ↓
+Evaluator Agent
+   ↓
+Refinement (Optional Loop)
+   ↓
+Final Generator
+   ↓
+Response
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. Project Goal
+
+Build a system that:
+
+* Loads documents
+* Creates LlamaIndex
+* Uses agent-style query refinement
+* Produces accurate response
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. Step-by-Step Implementation
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 1: Install
+
+```bash
+pip install llama-index
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 2: Load Documents
+
+```python
+from llama_index.core import SimpleDirectoryReader
+
+documents = SimpleDirectoryReader("data").load_data()
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 3: Create Index
+
+```python
+from llama_index.core import VectorStoreIndex
+
+index = VectorStoreIndex.from_documents(documents)
+query_engine = index.as_query_engine()
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 4: Create Agentic Retrieval Logic
+
+```python
+def agentic_rag(query):
+    # Step 1: Initial retrieval
+    response = query_engine.query(query)
+    
+    # Step 2: Evaluate (simple check example)
+    if "not enough information" in str(response).lower():
+        refined_query = query + " Explain in more detail."
+        response = query_engine.query(refined_query)
+    
+    return response
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Step 5: Run System
+
+```python
+result = agentic_rag("Explain Agentic AI architecture.")
+print(result)
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. Enhancing the Project
+
+You can improve by:
+
+✔ Adding multi-query retrieval
+✔ Adding re-ranking
+✔ Adding evaluation LLM
+✔ Connecting to vector DB like Chroma
+✔ Adding memory layer
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. Advanced Agentic RAG Flow
+
+```text
+Query
+   ↓
+Break into sub-questions
+   ↓
+Retrieve for each
+   ↓
+Combine context
+   ↓
+Validate answer
+   ↓
+Generate final structured response
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. Agentic RAG vs Basic RAG
+
+| Feature              | Basic RAG | Agentic RAG |
+| -------------------- | --------- | ----------- |
+| Single Retrieval     | ✅         | ❌           |
+| Multi-step Retrieval | ❌         | ✅           |
+| Query Refinement     | ❌         | ✅           |
+| Evaluation Step      | ❌         | ✅           |
+| Planning             | ❌         | ✅           |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 9. Where Agentic RAG is Used
+
+* Enterprise knowledge assistants
+* Legal research systems
+* Financial analytics
+* Multi-document reasoning
+* Autonomous research agents
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* No evaluation step
+* No retrieval limit
+* Too large chunk size
+* Not controlling token size
+* Overcomplicating refinement
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* Agentic RAG adds reasoning to RAG
+* LlamaIndex simplifies indexing
+* Retrieval can be iterative
+* Evaluation improves quality
+* Core architecture for enterprise AI
+
