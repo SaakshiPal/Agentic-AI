@@ -1,0 +1,216 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔗🤖 Week-5 | Last Part-2 – Introduction to n8n
+
+This document introduces **n8n**, a powerful **workflow automation platform** used to connect applications, APIs, and AI agents.
+
+It allows you to build **automated workflows without heavy coding**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 1. What is n8n?
+
+**n8n (Node-based automation tool)** is an open-source platform that allows you to:
+
+✔ Automate tasks
+✔ Connect different applications
+✔ Trigger workflows automatically
+✔ Integrate AI systems
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Simple Definition
+
+> n8n = A tool to automate workflows by connecting apps, APIs, and services.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2. Why n8n is Important for Agentic AI
+
+Agentic AI systems often need to:
+
+* Send emails
+* Fetch data from APIs
+* Store information in databases
+* Trigger external services
+
+Instead of writing complex backend code, **n8n automates these tasks**.
+
+Example:
+
+```text
+AI Agent → n8n Workflow → Email Notification
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 3. How n8n Works
+
+n8n uses **nodes** connected in a workflow.
+
+```text
+Trigger
+   ↓
+Process Data
+   ↓
+Call API
+   ↓
+Send Output
+```
+
+Each step is represented as a **node**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 4. Basic Workflow Example
+
+Example automation:
+
+```text
+User submits form
+   ↓
+n8n receives data
+   ↓
+AI processes information
+   ↓
+Email sent to user
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 5. n8n Architecture
+
+```text
+Trigger Node
+   ↓
+Processing Node
+   ↓
+Integration Node
+   ↓
+Output Node
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 6. Common Nodes in n8n
+
+| Node Type     | Purpose            |
+| ------------- | ------------------ |
+| Trigger       | Starts workflow    |
+| HTTP Request  | Call APIs          |
+| AI Node       | Use AI models      |
+| Database Node | Store data         |
+| Email Node    | Send notifications |
+| Logic Node    | Conditions & loops |
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 7. Example Use Cases
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 AI Customer Support Automation
+
+```text
+Customer Message
+   ↓
+AI Agent
+   ↓
+n8n workflow
+   ↓
+Auto reply or ticket creation
+```
+
+---
+
+🔹 Research Automation
+
+```text
+News API
+   ↓
+AI summarization
+   ↓
+Store results
+   ↓
+Send daily email report
+```
+
+---
+
+🔹 Data Pipeline Automation
+
+```text
+Database Update
+   ↓
+Trigger n8n
+   ↓
+AI analyzes data
+   ↓
+Generate report
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 8. Installing n8n
+
+You can run n8n locally using:
+
+```bash
+npm install n8n -g
+n8n
+```
+
+Then open:
+
+```
+http://localhost:5678
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 9. n8n + Agentic AI Architecture
+
+```text
+User Input
+   ↓
+AI Agent
+   ↓
+n8n Workflow
+   ↓
+External APIs / Databases
+   ↓
+Result returned
+```
+
+n8n acts as **automation glue** between AI and external systems.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 10. Benefits of Using n8n
+
+✔ Low-code automation
+✔ Integrates hundreds of services
+✔ Visual workflow builder
+✔ Open-source and customizable
+✔ Works well with AI agents
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Beginner Mistakes
+
+* Creating overly complex workflows
+* No error handling
+* Ignoring security for API keys
+* Trigger loops causing repeated executions
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Key Takeaways
+
+* n8n is an automation platform
+* Uses node-based workflows
+* Connects AI systems with external tools
+* Simplifies integration tasks
+* Important for real-world AI automation
+
+
